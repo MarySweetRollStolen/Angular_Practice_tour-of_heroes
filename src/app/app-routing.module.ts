@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { TeamsComponent } from './teams/teams.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/authentication', pathMatch: 'full' },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'registration', component: RegistrationComponent },
-  { path: 'authentication', component: AuthenticationComponent}
+  { path: 'authentication', component: AuthenticationComponent},
+  { path: 'teams', component: TeamsComponent}
 ];
 
 @NgModule({

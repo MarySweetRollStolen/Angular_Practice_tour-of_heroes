@@ -14,5 +14,4 @@ export class AuthenticationComponent {
   submitted = false;
   onSubmit() { this.submitted = true; }
 
-
 }

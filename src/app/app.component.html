@@ -1,9 +1,10 @@
 <h1>{{title}}</h1>
 <app-authentication></app-authentication>
-<div *ngIf = false>
+<div *ngIf = true>
 <nav>
     <a routerLink="/dashboard">Dashboard</a>
     <a routerLink="/heroes">Heroes</a>
+    <a routerLink="/teams">Teams</a>
   </nav>
 <router-outlet></router-outlet>
 <app-messages></app-messages>
