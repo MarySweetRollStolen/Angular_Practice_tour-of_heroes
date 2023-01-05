@@ -14,7 +14,6 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
-import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +24,7 @@ import { LoginComponent } from './login/login.component';
     DashboardComponent,
     HeroSearchComponent,
     RegistrationComponent,
-    AuthenticationComponent,
-    LoginComponent
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,18 @@
-<h1>Wellcom to game</h1>
+<h2>Wellcom to game</h2>
 
-<app-login></app-login>
+
+<form #userForm="ngForm">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter username" required [(ngModel)]="model.username" name="username">
+        <p>{{model.username}}</p>
+        <p>{{User2.username}}</p>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" required [(ngModel)]="model.password" name="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 
 <p>Don't have an account? <a routerLink="/register">Register</a></p>
