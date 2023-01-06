@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Team } from '../team';
 import { TeamService } from '../team.service';
+import { UserServiceService } from '../user-service.service';
 
 @Component({
   selector: 'app-teams',
@@ -10,12 +11,19 @@ import { TeamService } from '../team.service';
 export class TeamsComponent {
 
   public teams : Team[] = [];
-  constructor(private teamService : TeamService) {
+  IsAuthorized: boolean = false;
+
+  constructor(private teamService : TeamService, private userService : UserServiceService) {
     this.teams = this.teamService.getTeams();
    }
 
   ngOnInit(): void {
   }
+
+  checkAuth(username : string, password : string) : void {
+    this.IsAuthorized = this.userService.checkAuth(username, password);
+  }
+
 
   add(team: string): void {
     team = team.trim();
