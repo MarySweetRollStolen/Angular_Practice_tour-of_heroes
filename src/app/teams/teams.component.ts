@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Team } from '../team';
+import { TeamService } from '../team.service';
 
 @Component({
   selector: 'app-teams',
@@ -7,18 +9,19 @@ import { Component } from '@angular/core';
 })
 export class TeamsComponent {
 
-  constructor() { }
+  public teams : Team[] = [];
+  constructor(private teamService : TeamService) {
+    this.teams = this.teamService.getTeams();
+   }
 
   ngOnInit(): void {
   }
 
-  HEROES = [
-    { id: 12, name: 'Cat team' },
-    { id: 13, name: 'Bombs team' },
-    { id: 14, name: 'Селера тім' },
-    { id: 15, name: 'Зірочки' },
-    { id: 16, name: 'Glasses team' }
-  ];
+  add(team: string): void {
+    team = team.trim();
+    if (!team) { return; }
+    //newTeam = new Team(0, team, 0, []);
+    this.teamService.addTeam(team);
+  }
 
-  TEAMS = this.HEROES;
 }

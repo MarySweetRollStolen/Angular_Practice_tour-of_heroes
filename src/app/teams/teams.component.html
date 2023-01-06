@@ -1,9 +1,14 @@
 <div>
     <h2>Teams</h2>
     <ul class="teams">
-        <li *ngFor="let team of TEAMS">
+        <li *ngFor="let team of teams">
               <span class="name">{{team.name}}</span>
       </li>
     </ul>
-    <button>Add team</button>
+  </div>
+  <div>
+    <label for="team-hero">Team name: </label>
+    <input id="team-hero" #teamName />
+    <button type="button" class="add-button" (click)="add(teamName.value); teamName.value=''">
+        Add team</button>
   </div>
