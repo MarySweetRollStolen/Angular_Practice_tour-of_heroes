@@ -2,7 +2,11 @@
     <h2>Teams</h2>
     <ul class="teams">
         <li *ngFor="let team of teams">
-              <span class="name">{{team.name}}</span>
+              <a routerLink="/team-detail/{{team.id}}">
+                <span class="badge">{{team.id}}</span> {{team.name}}
+              </a>
+              <!-- <button type="button" class="delete" title="delete team"
+                (click)="delete(team)">x</button> -->
       </li>
     </ul>
   </div>

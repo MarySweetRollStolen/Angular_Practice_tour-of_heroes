@@ -12,6 +12,11 @@ export class TeamsComponent {
 
   public teams : Team[] = [];
   IsAuthorized: boolean = false;
+  selectedTeam?: Team;
+
+  getHeroes(): void {
+    this.teamService.getTeams()
+  }
 
   constructor(private teamService : TeamService, private userService : UserServiceService) {
     this.teams = this.teamService.getTeams();

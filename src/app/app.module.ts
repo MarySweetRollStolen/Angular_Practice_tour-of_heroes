@@ -16,6 +16,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { TeamsComponent } from './teams/teams.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { TeamDetailComponent } from './team-detail/team-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
     RegistrationComponent,
     AuthenticationComponent,
     TeamsComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    TeamDetailComponent
   ],
   imports: [
     BrowserModule,
