@@ -15,6 +15,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { TeamsComponent } from './teams/teams.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TeamsComponent } from './teams/teams.component';
     HeroSearchComponent,
     RegistrationComponent,
     AuthenticationComponent,
-    TeamsComponent
+    TeamsComponent,
+    NavigationBarComponent
   ],
   imports: [
     BrowserModule,
