@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Team } from '../team';
 import { TeamService } from '../team.service';
+import { Hero } from '../hero';
+import { HeroService } from '../hero.service';
 import { UserServiceService } from '../user-service.service';
 
 @Component({
@@ -11,18 +13,38 @@ import { UserServiceService } from '../user-service.service';
 export class TeamsComponent {
 
   public teams : Team[] = [];
+  public heroes : Hero[] = [];
+  public teamheros : Hero[] = [];
   IsAuthorized: boolean = false;
   selectedTeam?: Team;
 
-  getHeroes(): void {
+  getTeams(): void {
     this.teamService.getTeams()
   }
 
-  constructor(private teamService : TeamService, private userService : UserServiceService) {
+  getHeroes(): void {
+    this.heroService.getHeroes()
+    .subscribe(heroes => this.heroes = heroes);
+  }
+
+  // getTeamMembers(): void {
+  //   this.heroService.getHeroes()
+  //   .subscribe(heroes => 
+  //     heroes.forEach(hero => {
+  //       if(hero.id > 15)
+  //       {
+  //         this.teamheros.push(hero);
+  //       }
+  //     })
+  //     );
+  // }
+
+  constructor(private teamService : TeamService, private userService : UserServiceService, private heroService : HeroService) {
     this.teams = this.teamService.getTeams();
    }
 
   ngOnInit(): void {
+    this.getHeroes();
   }
 
   checkAuth(username : string, password : string) : void {

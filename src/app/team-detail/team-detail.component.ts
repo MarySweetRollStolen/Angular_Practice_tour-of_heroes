@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { Team } from '../team';
+import { TeamService } from '../team.service';
+
 
 @Component({
   selector: 'app-team-detail',
@@ -7,4 +12,14 @@ import { Component } from '@angular/core';
 })
 export class TeamDetailComponent {
 
+
+  constructor(
+    private route: ActivatedRoute,
+    private heroService: TeamService,
+    private location: Location
+  ) { }
+
+  ngOnInit(): void {
+    
+  }
 }
