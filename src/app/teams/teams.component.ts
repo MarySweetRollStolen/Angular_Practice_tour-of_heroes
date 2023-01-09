@@ -44,6 +44,7 @@ export class TeamsComponent {
     team = team.trim();
     if (!team) { return; }
     //newTeam = new Team(0, team, 0, []);
+    //if(!this.teams.name.include(team))
     this.teamService.addTeam(team);
   }
 
