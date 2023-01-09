@@ -17,12 +17,12 @@
   .teams li {
     position: relative;
     cursor: pointer;
-    margin: 5px;
+    /* margin: 5px; */
   }
   
   .teams li:hover {
     left: .1em;
-
+    background-color: #feeaea;
   }
   
   .teams a {
@@ -39,9 +39,7 @@
 
  li:hover {
     color: #ed4752;
-    background-color: #ffc4c8;
-    width: auto;
-    padding-left: 10px;
+    /* //background-color: #ffc4c8; */
   }
   
   .teams a:active {
