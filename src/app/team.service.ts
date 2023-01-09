@@ -21,8 +21,12 @@ export class TeamService {
     return this.teams
   }
 
+  getTeam(id: number) {
+    return this.teams.find(team => team.id === id);
+  }
+
   addTeam(teamName: string) {
-    let newTeam: Team = {id: 0, name: teamName , amount: 0, members: []};
+    let newTeam: Team = {id: this.teams[this.teams.length-1].id + 1, name: teamName , amount: 0, members: []};
     this.teams.push(newTeam);
   }
 }

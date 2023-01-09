@@ -11,15 +11,20 @@ import { TeamService } from '../team.service';
   styleUrls: ['./team-detail.component.css']
 })
 export class TeamDetailComponent {
-
+  team: Team | undefined;
 
   constructor(
     private route: ActivatedRoute,
-    private heroService: TeamService,
+    private teamService: TeamService,
     private location: Location
   ) { }
 
   ngOnInit(): void {
-    
+    this.getTeam();
+  }
+
+  getTeam(): void {
+    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
+    this.teamService.getTeam(id);
   }
 }
