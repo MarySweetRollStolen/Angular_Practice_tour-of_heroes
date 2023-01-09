@@ -1,12 +1,37 @@
-<p>{{team}}</p>
+
 <div *ngIf="team">
   <h2>{{team.name | uppercase}} Details</h2>
   <div><span>id: </span>{{team.id}}</div>
   <div>
-    <label for="team-name">Hero name: </label>
+    <label for="team-name">Team name: </label>
     <input id="team-name" [(ngModel)]="team.name" placeholder="Team name"/>
   </div>
   <!-- <button type="button" (click)="goBack()">go back</button>
   <button type="button" (click)="save()">save</button> -->
+  <p>Team memebers:</p>
+  <div *ngIf="team.members">
+    <ul class="heroes">
+      <li *ngFor="let hero of team.members">
+          <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </li>
+    </ul>
+  </div>
+  <p>Add new heros</p>
+  <label for="hero-name">Hero name: </label>
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  
+  <ul class="search-result">
+    <li *ngFor="let hero of heroes$ | async" >
+      <a (click)="addNewMember(hero)">
+        {{hero.name}}
+      </a>
+    </li>
+  </ul>
+
+  <ul>
+    <li *ngFor="let hero of allHeros">
+      <span>{{hero.name}}</span>
+    </li>
+  </ul>
+
 </div>
-  <p>team detail works</p><p>{{team}}</p>

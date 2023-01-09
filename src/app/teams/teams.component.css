@@ -41,6 +41,7 @@
     color: #ed4752;
     background-color: #ffc4c8;
     width: auto;
+    padding-left: 10px;
   }
   
   .teams a:active {
@@ -90,4 +91,12 @@
   button.delete:hover {
     background-color: #a64253;
     color: white;
+  }
+
+  
+  .sub-li {
+    background-color: #ffc2c2;
+  }
+  .sub-li:hover {
+    background-color: #feeaea;
   }
