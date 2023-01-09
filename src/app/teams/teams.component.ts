@@ -13,7 +13,6 @@ import { UserServiceService } from '../user-service.service';
 export class TeamsComponent {
 
   public teams : Team[] = [];
-  public heroes : Hero[] = [];
   public teamheros : Hero[] = [];
   IsAuthorized: boolean = false;
   selectedTeam?: Team;
@@ -22,29 +21,18 @@ export class TeamsComponent {
     this.teamService.getTeams()
   }
 
-  getHeroes(): void {
-    this.heroService.getHeroes()
-    .subscribe(heroes => this.heroes = heroes);
-  }
-
-  // getTeamMembers(): void {
+  // getHeroes(): void {
   //   this.heroService.getHeroes()
-  //   .subscribe(heroes => 
-  //     heroes.forEach(hero => {
-  //       if(hero.id > 15)
-  //       {
-  //         this.teamheros.push(hero);
-  //       }
-  //     })
-  //     );
+  //   .subscribe(heroes => this.heroes = heroes);
   // }
+
 
   constructor(private teamService : TeamService, private userService : UserServiceService, private heroService : HeroService) {
     this.teams = this.teamService.getTeams();
-   }
+  }
 
   ngOnInit(): void {
-    this.getHeroes();
+    // this.getHeroes();
   }
 
   checkAuth(username : string, password : string) : void {

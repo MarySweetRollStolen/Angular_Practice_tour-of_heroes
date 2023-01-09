@@ -54,6 +54,14 @@ export class HeroService {
     );
   }
 
+  getNumberOfHeroes(idArray: number[]): Observable<Hero[]> {
+    const url = `${this.heroesUrl}/?id=${idArray}`;
+    return this.http.get<Hero[]>(url).pipe(
+      tap(_ => this.log(`fetched heroes id=${idArray}`)),
+      catchError(this.handleError<Hero[]>(`getHeroes id=${idArray}`))
+    );
+  }
+
   /* GET heroes whose name contains search term */
   searchHeroes(term: string): Observable<Hero[]> {
     if (!term.trim()) {

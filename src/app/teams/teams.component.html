@@ -6,8 +6,8 @@
                 <span class="badge">{{team.id}}</span> {{team.name}}
               </a>
               <ul>
-                <li *ngFor="let heroId of team.members">      
-                    <span>{{heroId}}</span>
+                <li *ngFor="let hero of team.members">      
+                    <span>{{hero.name}}</span>
                     <span></span>
                 </li>
               </ul>
