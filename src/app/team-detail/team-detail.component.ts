@@ -57,7 +57,7 @@ export class TeamDetailComponent {
   }
 
   addNewMember(hero: Hero): void {
-    if(this.team){
+    if(this.team && !this.team.members.includes(hero)){
       this.team.members.push(hero);
     };  
   }
